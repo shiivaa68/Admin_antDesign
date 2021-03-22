@@ -1,0 +1,15 @@
+@font-face{
+    font-family: yakan;
+    font-weight: normal;
+    src: url('../fonts/BYekan.ttf');
+}
+
+@font-face{
+    font-family: yakan;
+    font-weight: bold;
+    src: url("../fonts/BYekanBold.ttf");
+}
+
+body{
+    font-family: yekan;
+}

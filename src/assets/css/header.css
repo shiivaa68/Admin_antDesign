@@ -1,0 +1,9 @@
+body h1.title {
+    color:white;
+    float: right;
+}
+
+body h1.titleDashbord{
+     font-size: 2rem;
+    float: right;
+}

@@ -1,24 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import  React from 'react';
+import {Layout} from 'antd'
+import {Route,Switch} from 'react-router-dom'
+import SideBar from './component/generic/SideBar';
+import Header from './component/generic/Header'
+import Footer from './component/generic/Footer'
+import NotFound from './component/generic/NotFound';
+import Dashboard from './component/generic/Dashboard'
+import 'antd/dist/antd.css'
+import './assets/css/general.css'
+const { Header:AntHeader, Footer:AntFooter, Sider, Content } = Layout;
+
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Layout>
+    <AntHeader>
+    <Header/>
+    </AntHeader>
+
+    <Layout>
+      <Sider><SideBar/></Sider>
+      <Content style={{padding:'50px'}}>
+        <Switch>
+          <Route exact path="/" component={Dashboard}/>
+          <Route path="*" component={NotFound}/>
+        </Switch>
+      </Content>
+
+    </Layout>
+    <AntFooter><Footer/></AntFooter>
+  </Layout>
   );
 }
 
