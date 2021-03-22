@@ -11,8 +11,9 @@ import store from './redux/store'
 // import $ from 'jquery';
 // import Popper from 'popper.js';
 
-
+console.log(store)
 ReactDOM.render(
+
   <Provider store={store}>
   <React.StrictMode>
   <ConfigProvider direction="rtl" locale={fa}>

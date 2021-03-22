@@ -8,6 +8,7 @@ import NotFound from './component/generic/NotFound';
 import Dashboard from './component/generic/Dashboard'
 import 'antd/dist/antd.css'
 import './assets/css/general.css'
+import RouterPerson from './component/person/Router'
 const { Header:AntHeader, Footer:AntFooter, Sider, Content } = Layout;
 
 
@@ -24,6 +25,7 @@ function App() {
       <Content style={{padding:'50px'}}>
         <Switch>
           <Route exact path="/" component={Dashboard}/>
+          <Route path="/person" component={RouterPerson}/>
           <Route path="*" component={NotFound}/>
         </Switch>
       </Content>
