@@ -4,8 +4,8 @@ import { Table } from 'antd'
 import { EyeOutlined } from '@ant-design/icons'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
-import { posts } from '../../redux/actions/post'
-
+// import { posts } from '../../redux/actions/post'
+import {getItem, getItems} from '../../redux/actions/post'
 const columns = [
     {
         title: 'عنوان',
@@ -26,15 +26,15 @@ class List extends Component {
     constructor() {
         super()
         this.state = {
-            posts: [],
+            // posts: [],
             loading: true
         }
     }
 
-
     componentDidMount() {
-        axios.get('https://jsonplaceholder.typicode.com/posts')
-            .then(response => this.props.getItem(response.data))
+        this.props.getItems()
+        // axios.get('https://jsonplaceholder.typicode.com/posts')
+        //     .then(response => this.props.getItem(response.data))
             .finally(() => this.setState({ loading: false }))
 
     }
@@ -54,7 +54,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        getItem: data => dispatch(posts(data))
+        getItems: data => dispatch(getItems(data))
     }
 }
 

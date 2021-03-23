@@ -11,3 +11,12 @@ const myMiddleWare = store => next =>action=>{
 
 const store  = createStore(reducers,applyMiddleware(myMiddleWare))
 export default store;
+
+//toolkit
+// import {configureStore} from '@reduxjs/toolkit';
+
+
+// const store = configureStore({
+//     reducer:reducers
+// })
+// export default store;
