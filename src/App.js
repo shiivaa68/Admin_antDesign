@@ -9,6 +9,7 @@ import Dashboard from './component/generic/Dashboard'
 import 'antd/dist/antd.css'
 import './assets/css/general.css'
 import RouterPerson from './component/person/Router'
+import postRouter from './component/post/Router'
 const { Header:AntHeader, Footer:AntFooter, Sider, Content } = Layout;
 
 
@@ -26,6 +27,7 @@ function App() {
         <Switch>
           <Route exact path="/" component={Dashboard}/>
           <Route path="/person" component={RouterPerson}/>
+          <Route path="/post" component={postRouter}/>
           <Route path="*" component={NotFound}/>
         </Switch>
       </Content>
