@@ -3,9 +3,9 @@ import { connect } from 'react-redux';
 import { Table } from 'antd'
 import { EyeOutlined } from '@ant-design/icons'
 import { Link } from 'react-router-dom'
-import axios from 'axios'
+// import axios from 'axios'
 // import { posts } from '../../redux/actions/post'
-import {getItem, getItems} from '../../redux/actions/post'
+import { getItems} from '../../redux/actions/post'
 const columns = [
     {
         title: 'عنوان',

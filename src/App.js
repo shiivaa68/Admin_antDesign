@@ -6,15 +6,32 @@ import Header from './component/generic/Header'
 import Footer from './component/generic/Footer'
 import NotFound from './component/generic/NotFound';
 import Dashboard from './component/generic/Dashboard'
+import Login from './component/generic/Login'
 import 'antd/dist/antd.css'
 import './assets/css/general.css'
 import RouterPerson from './component/person/Router'
 import postRouter from './component/post/Router'
+import {useSelector} from 'react-redux'
+
+
+
 const { Header:AntHeader, Footer:AntFooter, Sider, Content } = Layout;
 
 
 
 function App() {
+
+const loading = useSelector(state => state.userIsLoading)
+const isLoggedIn =useSelector(state => state.isLoggedIn)
+
+// if(loading){
+//   return 'loading....'
+// }
+
+if(!isLoggedIn){
+  return <Login/>
+}
+
   return (
     <Layout>
     <AntHeader>
